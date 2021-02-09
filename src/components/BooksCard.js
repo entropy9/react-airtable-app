@@ -9,6 +9,16 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
+import Flippy, {FrontSide, BackSide} from 'react-flippy'
+import SideA from './SideA'
+import SideB from './SideB'
+
+
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+
+
 const booksData = [
 	{
 		title: 'Pietr the Latvian',
@@ -30,6 +40,10 @@ const booksData = [
 	}
 ]
 
+
+
+
+
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
@@ -46,14 +60,20 @@ const useStyles = makeStyles(theme => ({
 	}
 }))
 
-function BooksCard({ title, author, published, description, coverImage }) {
+function BooksCard({ title, author, published, description, coverImage, mediaurl }) {
 	const classes = useStyles()
 	return (
+
+
+
 		<div className={classes.root}>
+
 			<Grid item xs={10}>
+			<Flippy>
+    			<FrontSide>
 				<Card className={classes.card}>
 					<CardActionArea>
-						<CardMedia className={classes.media} image={coverImage} title='React' />
+						<a href={mediaurl} target="_blank"><CardMedia className={classes.media} image={coverImage} title={title} /></a>
 						<CardContent>
 							<Typography gutterBottom variant='h5' component='h2'>
 								{title}
@@ -74,6 +94,33 @@ function BooksCard({ title, author, published, description, coverImage }) {
 						</Button>
 					</CardActions>
 				</Card>
+				</FrontSide>
+				<BackSide>
+				<Card className={classes.card}>
+					<CardActionArea>
+						<a href={mediaurl} target="_blank"><CardMedia className={classes.media} image={coverImage} title={title} /></a>
+						<CardContent>
+							<Typography gutterBottom variant='h5' component='h2'>
+								{title}
+							</Typography>
+							<Typography variant='body2' color='textSecondary' component='p'>
+								by {author}
+							</Typography>
+						</CardContent>
+					</CardActionArea>
+					<CardContent>
+						<Typography paragraph variant='body2'>
+							{description.length > 150 ? description.slice(0, 150) + `...` : description}
+						</Typography>
+					</CardContent>
+					<CardActions>
+						<Button size='small' variant='outlined' color='primary'>
+							{published}
+						</Button>
+					</CardActions>
+				</Card>
+				</BackSide>
+				</Flippy>
 			</Grid>
 		</div>
 	)
