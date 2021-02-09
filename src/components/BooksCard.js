@@ -53,23 +53,25 @@ const useStyles = makeStyles(theme => ({
 		margin: 20
 	},
 	card: {
-		maxWidth: 345
+		maxWidth: 365
 	},
 	media: {
 		height: 350
+	},
+	mediaL: {
+		height: 250
 	}
 }))
 
-function BooksCard({ title, author, published, description, coverImage, mediaurl }) {
+function BooksCard({ title, author, published, description, coverImage, mediaurl, compImage }) {
 	const classes = useStyles()
 	return (
-
 
 
 		<div className={classes.root}>
 
 			<Grid item xs={10}>
-			<Flippy>
+			<Flippy flipOnHover={false} flipOnClick={true} flipDirection="horizontal" style={{ width: '345px'}}>
     			<FrontSide>
 				<Card className={classes.card}>
 					<CardActionArea>
@@ -98,13 +100,13 @@ function BooksCard({ title, author, published, description, coverImage, mediaurl
 				<BackSide>
 				<Card className={classes.card}>
 					<CardActionArea>
-						<a href={mediaurl} target="_blank"><CardMedia className={classes.media} image={coverImage} title={title} /></a>
+						<CardMedia className={classes.mediaL} image={compImage} title={title} />
 						<CardContent>
 							<Typography gutterBottom variant='h5' component='h2'>
-								{title}
+								{author}
 							</Typography>
 							<Typography variant='body2' color='textSecondary' component='p'>
-								by {author}
+								Team Name: {title} 
 							</Typography>
 						</CardContent>
 					</CardActionArea>
@@ -114,8 +116,8 @@ function BooksCard({ title, author, published, description, coverImage, mediaurl
 						</Typography>
 					</CardContent>
 					<CardActions>
-						<Button size='small' variant='outlined' color='primary'>
-							{published}
+						<Button size='small' variant='contained' color='secondary'>
+							{title}
 						</Button>
 					</CardActions>
 				</Card>
