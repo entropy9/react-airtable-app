@@ -53,13 +53,13 @@ const useStyles = makeStyles(theme => ({
 		margin: 20
 	},
 	card: {
-		maxWidth: 365
+		maxWidth: 345
 	},
 	media: {
 		height: 350
 	},
 	mediaL: {
-		height: 250
+		height: 350
 	}
 }))
 
