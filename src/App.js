@@ -39,7 +39,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch('https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?api_key=keyTmoW0bFkGJdz6z')
+		fetch('https://api.airtable.com/v0/app38HX2SzhS41J5M/tblgHoGdUOdB7m96S?sort%5B0%5D%5Bfield%5D=published&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z')
 			.then(res => res.json())
 			.then(res => {
 				console.log(res.records)
@@ -47,7 +47,7 @@ class App extends React.Component {
 			})
 			.catch(error => console.log(error))
 	}
-
+	
   render() {
 	
     const {booksData} = this.state
