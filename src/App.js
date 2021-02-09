@@ -57,7 +57,7 @@ class App extends React.Component {
 			<AppBar position="fixed">
 			<Toolbar>
 				
-		    <Button href='https://airtable.com/tblgHoGdUOdB7m96S/viwoFNL5QMm9GUNDK?blocks=hide' variant="contained" color="secondary" >Airtable</Button>
+		    <Button href='https://airtable.com/invite/l?inviteId=invbTZrBaH9gs4Fvt&inviteToken=007610430b2ec5acfb4f4676204684766f18877568a8028435e77f0edd90eb07' variant="contained" color="secondary" >Airtable</Button>
 			<Button href='https://autodesk.com'variant="contained">Autodesk</Button>       
 
 				<Typography variant="h4">
