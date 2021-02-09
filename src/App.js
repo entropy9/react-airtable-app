@@ -35,11 +35,12 @@ const openInNewTab = (url) => {
 
 class App extends React.Component {
 	state = {
+		filter: "",
 		booksData: []
 	}
 
 	componentDidMount() {
-		fetch('https://api.airtable.com/v0/app38HX2SzhS41J5M/tblgHoGdUOdB7m96S?sort%5B0%5D%5Bfield%5D=author&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z')
+		fetch('https://api.airtable.com/v0/app38HX2SzhS41J5M/tblgHoGdUOdB7m96S?sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z')
 			.then(res => res.json())
 			.then(res => {
 				console.log(res.records)
@@ -48,9 +49,27 @@ class App extends React.Component {
 			.catch(error => console.log(error))
 	}
 	
-  render() {
+	handleChange = event => {
+		this.setState({ filter: event.target.value });
+	  };
 	
-    const {booksData} = this.state
+	  
+
+
+
+  render() {
+
+	
+	
+    const {filter, booksData} = this.state;
+	const lowercasedFilter = filter.toLowerCase();
+
+	const filteredData = booksData.filter(item => {
+		return Object.keys(item).some(key =>
+		  item[key].toLowerCase().includes(lowercasedFilter)
+		);
+	  });
+
         return (
             <Grid container direction='row' spacing={2}>
 				
@@ -63,14 +82,10 @@ class App extends React.Component {
 				<Typography variant="h4">
 				              
 				</Typography>
-
-
-				
 			</Toolbar>
-
 			</AppBar>
 
-                {booksData.map(book => (
+                {filteredData.map(book => (
                     <BooksCard {...book.fields} key={book.fields.id} />
                 ))}
             </Grid>

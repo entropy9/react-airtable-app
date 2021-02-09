@@ -41,9 +41,6 @@ const booksData = [
 ]
 
 
-
-
-
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
@@ -69,13 +66,12 @@ function BooksCard({ title, author, published, description, coverImage, mediaurl
 
 
 		<div className={classes.root}>
-
 			<Grid item xs={10}>
 			<Flippy flipOnHover={false} flipOnClick={true} flipDirection="horizontal" style={{ width: '345px'}}>
     			<FrontSide>
 				<Card className={classes.card}>
 					<CardActionArea>
-						<a href={mediaurl} target="_blank"><CardMedia className={classes.media} image={coverImage} title={title} /></a>
+						<CardMedia className={classes.media} image={coverImage} title={title} />
 						<CardContent>
 							<Typography gutterBottom variant='h5' component='h2'>
 								{title}
@@ -91,7 +87,7 @@ function BooksCard({ title, author, published, description, coverImage, mediaurl
 						</Typography>
 					</CardContent>
 					<CardActions>
-						<Button size='small' variant='outlined' color='primary'>
+						<Button href={mediaurl} target="_blank" rel="noreferrer" size='small' variant='outlined' color='primary'>
 							{published}
 						</Button>
 					</CardActions>
