@@ -69,7 +69,7 @@ class App extends React.Component {
 		if (regex.test(e.target.value)) {
 			global.foo1 = e.target.value.toLowerCase();
 			// this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo1+"%22%2C+LOWER(title))&sort%5B0%5D%5Bfield%5D="+document.getElementById("sortBy").value+"&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z");
-			this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=OR(SEARCH(%22"+global.foo1+"%22%2C+LOWER(title)),SEARCH(%22"+global.foo1+"%22%2C+LOWER(author)))&sort%5B0%5D%5Bfield%5D=published&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z");
+			this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=OR(SEARCH(%22"+global.foo1+"%22%2C+LOWER(title)),SEARCH(%22"+global.foo1+"%22%2C+LOWER(author)))&sort%5B0%5D%5Bfield%5D="+document.getElementById("sortBy").value+"&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z");
 			return true;
 		}
 		else
