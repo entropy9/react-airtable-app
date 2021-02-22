@@ -62,15 +62,17 @@ class App extends React.Component {
 	
 	handleChange = e => {
 		console.log(e.target.value);
-		if (/\W/g.test(e.target.value)) {
-			alert('Please use Alphanumeric characters only');
-			return false;
-		}
-		else
-		{
+		var regex = /^[A-Za-z0-9 ]+$/
+		if (regex.test(e.target.value)) {
 			global.foo1 = e.target.value.toLowerCase();
 			this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo1+"%22%2C+LOWER(title))&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z");
 			return true;
+		}
+		else
+		{
+			alert('Please use Alphanumeric characters only');
+			document.getElementById("tsearch").value = "";
+			return false;
 		}
 	
 
@@ -79,15 +81,17 @@ class App extends React.Component {
 
 	searchAuthor = e => {
 		console.log(e.target.value);
-		if (/\W/g.test(e.target.value)) {
-			alert('Please use Alphanumeric characters only');
-			return false;
+		var regex1 = /^[A-Za-z0-9 ]+$/
+		if (regex1.test(e.target.value)) {
+			global.foo2 = e.target.value.toLowerCase();
+			this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo2+"%22%2C+LOWER(author))&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z")
+		   return true;
 		}
 		else
 		{
-			global.foo1 = e.target.value.toLowerCase();
-	 		this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo1+"%22%2C+LOWER(author))&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z")
-			return true;
+			alert('Please use Alphanumeric characters only');
+			document.getElementById("asearch").value = "";
+			return false;
 		}
 		
 	  };
@@ -121,8 +125,8 @@ class App extends React.Component {
 				
 			</Toolbar>
 			<Toolbar style = {{ background: '#333' }}>
-				<input placeholder="Search Titles..." name="firstName" onChange={this.handleChange} />
-				<input style = {{ margin: '22px' }}  placeholder="Search Authors..." name="firstName" onChange={this.searchAuthor} />
+				<input name="tsearch" id="tsearch" placeholder="Search Titles..." name="firstName" onChange={this.handleChange} />
+				<input name="asearch" id="asearch" style = {{ margin: '22px' }}  placeholder="Search Authors..." name="firstName" onChange={this.searchAuthor} />
 			</Toolbar>
 			</AppBar>
 
