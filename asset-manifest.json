@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-airtable-app/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/react-airtable-app/static/js/main.76063ca6.chunk.js",
-    "main.js.map": "/react-airtable-app/static/js/main.76063ca6.chunk.js.map",
+    "main.js": "/react-airtable-app/static/js/main.1f9803c5.chunk.js",
+    "main.js.map": "/react-airtable-app/static/js/main.1f9803c5.chunk.js.map",
     "runtime-main.js": "/react-airtable-app/static/js/runtime-main.61fbaa6e.js",
     "runtime-main.js.map": "/react-airtable-app/static/js/runtime-main.61fbaa6e.js.map",
     "static/css/2.d0fdb7d3.chunk.css": "/react-airtable-app/static/css/2.d0fdb7d3.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.d0fdb7d3.chunk.css",
     "static/js/2.da4d372c.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.76063ca6.chunk.js"
+    "static/js/main.1f9803c5.chunk.js"
   ]
 }
