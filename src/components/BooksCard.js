@@ -77,7 +77,7 @@ function BooksCard({ title, author, published, description, coverImage, mediaurl
 								{title}
 							</Typography>
 							<Typography variant='body2' color='textSecondary' component='p'>
-								by {author}
+								Author: {author}
 							</Typography>
 						</CardContent>
 					</CardActionArea>

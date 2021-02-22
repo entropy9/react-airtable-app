@@ -49,7 +49,7 @@ class App extends React.Component {
 
 	componentDidMount(myurl) {
 		if(!myurl){
-		myurl ="https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22 %22%2C+title)&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z"
+		myurl ="https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22 %22%2C+title)&sort%5B0%5D%5Bfield%5D=published&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z"
 		}
 		else{
 
@@ -132,9 +132,9 @@ class App extends React.Component {
 				        Sort:       
 				</Typography>
 				<select id="sortBy" style = {{ background: '#333', padding: '8px', color: '#fff'}} onChange={this.sortRecords}>
-				<option selected value="title">Title</option>
+				<option value="title">Title</option>
 				<option value="author">Author</option>
-				<option value="published">Published Date</option>
+				<option selected value="published">Published Date</option>
 			</select>
 
 				
