@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   function handleChange(e) {
 	console.log(e.target.value);
 	global.foo = e.target.value;
- alert(global.foo);
+ 	alert(global.foo);
 }
 
 const openInNewTab = (url) => {
@@ -62,24 +62,37 @@ class App extends React.Component {
 	
 	handleChange = e => {
 		console.log(e.target.value);
-	global.foo1 = e.target.value.toLowerCase();
-	 this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo1+"%22%2C+LOWER(title))&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z")
+		if (/\W/g.test(e.target.value)) {
+			alert('Please use Alphanumeric characters only');
+			return false;
+		}
+		else
+		{
+			global.foo1 = e.target.value.toLowerCase();
+			this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo1+"%22%2C+LOWER(title))&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z");
+			return true;
+		}
+	
 
 		
 	  };
 
 	searchAuthor = e => {
 		console.log(e.target.value);
-	global.foo1 = e.target.value.toLowerCase();
-	 this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo1+"%22%2C+LOWER(author))&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z")
-
+		if (/\W/g.test(e.target.value)) {
+			alert('Please use Alphanumeric characters only');
+			return false;
+		}
+		else
+		{
+			global.foo1 = e.target.value.toLowerCase();
+	 		this.componentDidMount("https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?filterByFormula=SEARCH(%22"+global.foo1+"%22%2C+LOWER(author))&sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z")
+			return true;
+		}
 		
 	  };
 
-	
   render() {
-
-	
 	
     const {filter, booksData} = this.state;
 	const lowercasedFilter = filter.toLowerCase();
@@ -91,7 +104,7 @@ class App extends React.Component {
 	  });
 
         return (
-            <Grid container direction='row' spacing={2}>
+            <Grid container direction='row' spacing={2} >
 				
 			<AppBar style = {{ background: '#eee' }} position="fixed">
 			<Toolbar>
