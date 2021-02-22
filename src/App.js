@@ -141,7 +141,7 @@ class App extends React.Component {
 			</Toolbar>
 			<Toolbar style = {{ background: '#333' }}>
 				<input name="tsearch" id="tsearch" style = {{ margin: '22px' }} placeholder="Search Titles..." name="firstName" onChange={this.handleChange} />
-				<input name="asearch" id="asearch" placeholder="Search Authors..." name="firstName" onChange={this.searchAuthor} />
+				<input name="asearch" id="asearch" style = {{ }} placeholder="Search Authors..." name="firstName" onChange={this.searchAuthor} />
 			</Toolbar>
 			</AppBar>
 

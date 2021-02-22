@@ -53,10 +53,10 @@ const useStyles = makeStyles(theme => ({
 		maxWidth: 345
 	},
 	media: {
-		height: 350
+		height: 340
 	},
 	mediaL: {
-		height: 350
+		height: 340
 	}
 }))
 
@@ -67,9 +67,9 @@ function BooksCard({ title, author, published, description, coverImage, mediaurl
 
 		<div className={classes.root}>
 			<Grid item xs={10}>
-			<Flippy flipOnHover={false} flipOnClick={true} flipDirection="horizontal" style={{ width: '345px'}}>
+			<Flippy flipOnHover={false} flipOnClick={true} flipDirection="horizontal" style={{ width: '340px'}}>
     			<FrontSide>
-				<Card className={classes.card}>
+				<Card className={classes.card} variant="outlined">
 					<CardActionArea>
 						<CardMedia className={classes.media} image={coverImage} title={title} />
 						<CardContent>
@@ -87,14 +87,14 @@ function BooksCard({ title, author, published, description, coverImage, mediaurl
 						</Typography>
 					</CardContent>
 					<CardActions>
-						<Button href={mediaurl} target="_blank" rel="noreferrer" size='small' variant='outlined' color='primary'>
+						<Button href={mediaurl} target="_blank" rel="noreferrer" size='small' variant='outlined' color='secondary'>
 							{published}
 						</Button>
 					</CardActions>
 				</Card>
 				</FrontSide>
 				<BackSide>
-				<Card className={classes.card}>
+				<Card className={classes.card} variant="outlined">
 					<CardActionArea>
 						<CardMedia className={classes.mediaL} image={compImage} title={title} />
 						<CardContent>
