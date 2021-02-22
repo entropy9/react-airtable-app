@@ -114,9 +114,9 @@ class App extends React.Component {
 			<Toolbar>
 			<img src="https://img.icons8.com/color/452/tesseract.png" title="React Airtable Interface" style = {{ margin: '5px' }} width="60px"/>	
 		    <Button href='https://airtable.com/invite/l?inviteId=invbTZrBaH9gs4Fvt&inviteToken=007610430b2ec5acfb4f4676204684766f18877568a8028435e77f0edd90eb07' variant="contained" color="secondary" >Airtable</Button>
-			<Button size="small" style = {{ textTransform: 'none', color: '#eee', background: '#333', margin: '22px' }} onClick={() => {this.componentDidMount('https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?sort%5B0%5D%5Bfield%5D=author&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z');}} variant="contained">Sort by Author</Button> 
-			<Button size="small" style = {{ textTransform: 'none', color: '#eee', background: '#333' }} onClick={() => {this.componentDidMount('https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z');}} variant="contained">Sort by Title</Button> 
-			<Button size="small" style = {{ textTransform: 'none', color: '#eee', background: '#333', margin: '22px' }} onClick={() => {this.componentDidMount('https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?sort%5B0%5D%5Bfield%5D=published&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z');}} variant="contained">Sort by Date</Button>       
+			<Button size="small" style = {{ textTransform: 'none', color: '#eee', background: '#333', margin: '22px' }} onClick={() => {this.componentDidMount('https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?sort%5B0%5D%5Bfield%5D=author&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z');}} variant="contained">Author</Button> 
+			<Button size="small" style = {{ textTransform: 'none', color: '#eee', background: '#333' }} onClick={() => {this.componentDidMount('https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?sort%5B0%5D%5Bfield%5D=title&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z');}} variant="contained">Title</Button> 
+			<Button size="small" style = {{ textTransform: 'none', color: '#eee', background: '#333', margin: '22px' }} onClick={() => {this.componentDidMount('https://api.airtable.com/v0/app38HX2SzhS41J5M/Table%201?sort%5B0%5D%5Bfield%5D=published&sort%5B0%5D%5Bdirection%5D=asc&api_key=keyTmoW0bFkGJdz6z');}} variant="contained">Date</Button>       
 
 				<Typography variant="h4">
 				              
