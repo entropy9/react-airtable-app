@@ -105,7 +105,10 @@ class App extends React.Component {
 				              
 				</Typography>
 
-				<input style = {{ margin: '22px' }}  placeholder="Search Titles..." name="firstName" onChange={this.handleChange} />
+				
+			</Toolbar>
+			<Toolbar style = {{ background: '#333' }}>
+				<input placeholder="Search Titles..." name="firstName" onChange={this.handleChange} />
 				<input style = {{ margin: '22px' }}  placeholder="Search Authors..." name="firstName" onChange={this.searchAuthor} />
 			</Toolbar>
 			</AppBar>
